@@ -374,5 +374,19 @@ const bills = [
 ];
 
 // Start coding here
+let totalPriceEachLocation = bills.reduce((accumulator,currentValue)=>{
+    if (accumulator[currentValue.location]) {
+       accumulator[currentValue.location] += currentValue.total;
+    }else{
+        accumulator[currentValue.location] = currentValue.total;
+    }
+    return accumulator
+},{})
 
-const totalPaidByLocation;
+console.log(totalPriceEachLocation)
+/*
+
+})
+
+
+*/

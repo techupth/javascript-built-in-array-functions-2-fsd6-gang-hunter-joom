@@ -374,4 +374,27 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+//const totalMembers;
+let cutNull = bills.filter((item)=>{
+  return item.member != null
+})
+let filteredName = cutNull.map((name)=>{
+  return name.member.name
+})
+let noDoubleName = filteredName.filter(function(value, index, arr) {
+  console.log(value)
+  console.log(index)
+  console.log(arr);
+  return arr.indexOf(value) === index;
+});
+console.log(noDoubleName)
+console.log(noDoubleName.length)
+/*
+let count = noDoubleName.map((items)=>{
+  return items.length
+})
+*/
+
+console.log(cutNull)
+console.log(filteredName)
+console.log(`Unique Members Count: ${noDoubleName.length}`)

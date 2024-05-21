@@ -374,3 +374,9 @@ const bills = [
 ];
 
 // Start coding here
+let totalSum = bills.reduce((acc,curr)=>{
+  console.log(acc)
+  console.log(curr.total)
+  return acc+curr.total
+},0)
+console.log(`Total bill transaction is ${totalSum}`)
