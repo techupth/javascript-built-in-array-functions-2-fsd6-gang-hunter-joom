@@ -374,5 +374,11 @@ const bills = [
 ];
 
 // Start coding here
+function isNotNull(bill) {
+  return bill.member !== null;
 
-const newBills;
+}
+
+let newmemberList = bills.filter(isNotNull);
+
+console.log(newmemberList);
