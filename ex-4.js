@@ -374,4 +374,12 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+function purchased (bill) {
+  return bill.member !== null;
+}
+let purchasedBill = bills.filter(purchased);
+let purchasedNames = purchasedBill.map(bill => bill.member.name);
+
+let uniqueNamesCount = purchasedNames.filter((name, index, self) => self.indexOf(name) === index).length;
+
+console.log('Unique Members Count:', uniqueNamesCount);
