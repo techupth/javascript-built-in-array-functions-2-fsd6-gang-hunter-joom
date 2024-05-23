@@ -374,5 +374,18 @@ const bills = [
 ];
 
 // Start coding here
+const totalPaidByLocation = bills.filter((bill) => {
+    return bill.member !== null;
+  }).reduce((acc, bill) => {
+    const location = bill.location;
+    const total = Number(bill.total);
+  if (!acc[location]) {
+    acc[location] = total;
+  } else {
+    acc[location] += total;
+  }
+  
+  return acc;
+}, {});
 
-const totalPaidByLocation;
+console.log(totalPaidByLocation);
